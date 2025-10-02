@@ -48,7 +48,7 @@ client = Client(command_prefix="!", intents=intents)
 
 '''Rolls the given number of dice with the given number of sides. Can be with advantage or disadvantage'''
 @client.tree.command(name="roll", description="Roll dice with X sides, with the ability to automatically roll advantage or disadvantage", guild=GUILD_REFERENCE)
-async def Rolldice(interaction:discord.Interaction, number_of_sides: int, number_of_dice: int = 1, condition: RollConditions = RollConditions.NONE):
+async def RollDiceCommand(interaction:discord.Interaction, number_of_sides: int, number_of_dice: int = 1, condition: RollConditions = RollConditions.NONE):
     results: str = ''
 
     for i in range(number_of_dice):
@@ -63,7 +63,7 @@ async def Rolldice(interaction:discord.Interaction, number_of_sides: int, number
 **ONLY USE THIS WITH PEOPLE YOU TRUST, ANYONE CAN USE IT**
 '''
 @client.command()
-async def clear(ctx, ammount: int = -1):
+async def Clear(ctx, ammount: int = -1):
     if(ammount == -1):
         await ctx.channel.purge()
     else:
